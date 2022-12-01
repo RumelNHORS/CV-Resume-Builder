@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Download CV/Resume{% endblock title %}
+{% block content %}
+
+<div class="container">
+    <div class="row m-5">
+        <div class="col-md-10">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <h4>Download Your CV/Resume</h4>
+            </div>
+            <h5>{{ resum_profile.name }}</h5>
+            <h6>Phone : {{ resum_profile.phone }}</h6>
+            <h6>Email : {{ resum_profile.email }}</h6>
+            <h6>Address : {{ resum_profile.address }}</h6><hr>
+
+            <strong>About My Self</strong>
+            <p>{{ resum_profile.about_you }}</p>
+            <strong>Education</strong>
+            <ul>
+                2018 ---  Secondary School Certificate Of {{ resum_profile.school }}
+                <ul><li> Result GPA - {{ resum_profile.result }}</li></ul>
+                2022 ---  Diploma Engineering in CSE Of {{ resum_profile.collage }}
+                <ul><li> Result CGPA - {{ resum_profile.degree }}</li></ul>
+            </ul><hr>
+            <strong>Skill</strong>
+            <p>{{ resum_profile.skill }}</p>
+            <strong>Work Exprience</strong>
+            <p>{{ resum_profile.work_exprince }}</p>  
+    </div>
+    </div>
+    <div class="container row m-5 col-md-10">
+        <a href="{% url 'resume-pdf' resum_profile.id %}" class="btn btn-outline-info btn-sm">Download</a>
+
+    </div>
+   
+</div>
+{% endblock content %}
+
+

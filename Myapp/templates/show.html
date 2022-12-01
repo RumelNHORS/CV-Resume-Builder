@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row m-5">
+        <div class="col-md-10">
+
+            {% for msg in messages %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Congratualitions!</strong> {{ msg }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            {% endfor %}
+
+        <h4 class="text-center alert alert-info">Add Your Details For CV/Resume</h4>
+        <form method="POST">
+            {% csrf_token %}           
+            {{ form.as_p }}
+        <input type="submit" class="btn btn-secondary" value="Submit">
+        </form>
+        <br/>
+    </div>
+    </div>
+</div>
+
+{% endblock content %}
