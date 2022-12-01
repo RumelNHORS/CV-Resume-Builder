@@ -50,19 +50,19 @@ def Resume_pdf(request, id):
     #Creat a blank list
     lines = []
 
-    for resum_profile in ResumeProfile:
-        lines.append(resum_profile.name)
-        lines.append(resum_profile.phone)
-        lines.append(resum_profile.email)
-        lines.append(resum_profile.address)
-        lines.append(resum_profile.school)
-        lines.append(resum_profile.result)
-        lines.append(resum_profile.collage)
-        lines.append(resum_profile.degree)
-        lines.append(resum_profile.uni_versity)
-        lines.append(resum_profile.skill)
-        lines.append(resum_profile.work_exprince)
-        lines.append(resum_profile.about_you)
+    for r in resum_profile:
+        lines.append(r.name)
+        lines.append(r.phone)
+        lines.append(r.email)
+        lines.append(r.address)
+        lines.append(r.school)
+        lines.append(r.result)
+        lines.append(r.collage)
+        lines.append(r.degree)
+        lines.append(r.uni_versity)
+        lines.append(r.skill)
+        lines.append(r.work_exprince)
+        lines.append(r.about_you)
 
     #loop here
     for line in lines:
